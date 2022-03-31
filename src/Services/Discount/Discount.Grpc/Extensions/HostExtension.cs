@@ -10,6 +10,7 @@ namespace Discount.Grpc.Extensions
     {
         public static IHost MigrateDatabase<TContext>(this IHost host, int? retry = 0)
         {
+            if (retry == null) return host;
             var retryForAvailability = retry.Value;
 
             using var scope = host.Services.CreateScope();
