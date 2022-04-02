@@ -1,9 +1,9 @@
-﻿using Catalog.API.Data;
-using Catalog.API.Entities;
-using MongoDB.Driver;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Catalog.API.Data;
+using Catalog.API.Entities;
+using MongoDB.Driver;
 
 namespace Catalog.API.Repositories
 {
@@ -57,7 +57,7 @@ namespace Catalog.API.Repositories
 
         public async Task<bool> UpdateProduct(Product product)
         {
-            var updateResult = await _context.Products.ReplaceOneAsync(filter: p => p.Id == product.Id, replacement: product);
+            var updateResult = await _context.Products.ReplaceOneAsync(p => p.Id == product.Id, product);
             return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
         }
 

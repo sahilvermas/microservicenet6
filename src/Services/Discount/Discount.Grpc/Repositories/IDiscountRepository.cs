@@ -1,5 +1,5 @@
-﻿using Discount.Grpc.Entities;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Discount.Grpc.Entities;
 
 namespace Discount.Grpc.Repositories
 {

@@ -25,7 +25,7 @@ namespace Discount.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Discount.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Discount.API", Version = "v1"});
             });
         }
 
@@ -43,10 +43,7 @@ namespace Discount.API
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

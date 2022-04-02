@@ -29,7 +29,7 @@ namespace Basket.API
             });
 
             services.AddScoped<IBasketRepository, BasketRepository>();
-            
+
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(o =>
                 o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
 
@@ -38,7 +38,7 @@ namespace Basket.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Basket.API", Version = "v1"});
             });
         }
 
@@ -56,10 +56,7 @@ namespace Basket.API
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
