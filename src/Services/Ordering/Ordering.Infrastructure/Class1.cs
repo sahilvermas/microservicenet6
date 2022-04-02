@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ordering.Infrastructure
+﻿namespace Ordering.Infrastructure
 {
     public class Class1
     {
